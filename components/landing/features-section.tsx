@@ -1,68 +1,217 @@
-import { FileText, Upload, Search, MessageSquare, Shield, Clock } from 'lucide-react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  FileText,
+  Upload,
+  Search,
+  MessageSquare,
+  Shield,
+  Clock,
+  ArrowRight,
+  Sparkles,
+} from 'lucide-react';
 
 const features = [
   {
     icon: FileText,
     title: 'Buat Laporan Online',
-    description: 'Sampaikan keluhan Anda kapan saja dan di mana saja melalui form online yang mudah digunakan.',
+    description:
+      'Sampaikan keluhan kapan saja melalui form pengaduan online yang sederhana, cepat, dan mudah digunakan.',
   },
   {
     icon: Upload,
     title: 'Upload Bukti Foto',
-    description: 'Lampirkan foto atau dokumen pendukung untuk memperkuat laporan Anda.',
+    description:
+      'Lampirkan foto pendukung agar laporan lebih jelas dan proses verifikasi dapat dilakukan lebih cepat.',
   },
   {
     icon: Search,
     title: 'Tracking Status',
-    description: 'Pantau perkembangan laporan Anda secara real-time dari status baru hingga selesai.',
+    description:
+      'Pantau perkembangan laporan secara real-time, mulai dari status baru, diproses, selesai, hingga ditolak.',
   },
   {
     icon: MessageSquare,
-    title: 'Respon Cepat Admin',
-    description: 'Tim admin kami siap merespons dan menindaklanjuti setiap laporan yang masuk.',
+    title: 'Catatan Admin',
+    description:
+      'Setiap laporan dapat diberi catatan tindak lanjut oleh admin sehingga pelapor tahu progres penanganannya.',
   },
   {
     icon: Shield,
     title: 'Data Terjamin Aman',
-    description: 'Informasi pribadi dan laporan Anda dilindungi dengan sistem keamanan terbaik.',
+    description:
+      'Informasi akun dan laporan pengguna tersimpan dengan aman di sistem dan hanya digunakan untuk tindak lanjut.',
   },
   {
     icon: Clock,
-    title: 'Layanan 24/7',
-    description: 'Sistem kami beroperasi sepanjang waktu untuk menerima laporan dari masyarakat.',
+    title: 'Akses Kapan Saja',
+    description:
+      'Sistem dapat digunakan kapan saja untuk membuat laporan baru maupun memantau status laporan yang sudah dikirim.',
   },
 ];
 
 export function FeaturesSection() {
   return (
-    <section id="fitur" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">
-            Fitur Unggulan
+    <section
+      id="fitur"
+      className="relative overflow-hidden bg-slate-50 py-24 dark:bg-slate-950"
+    >
+      {/* Background Decoration */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute left-1/2 top-0 h-80 w-80 -translate-x-1/2 rounded-full bg-blue-500/10 blur-3xl" />
+        <div className="absolute -left-28 bottom-10 h-96 w-96 rounded-full bg-sky-400/10 blur-3xl" />
+        <div className="absolute -right-28 top-24 h-96 w-96 rounded-full bg-indigo-400/10 blur-3xl" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4">
+        {/* Header */}
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <div className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-blue-700 shadow-sm dark:border-blue-900/60 dark:bg-blue-950/40 dark:text-blue-300">
+            <Sparkles className="h-4 w-4" />
+            Fitur Utama SIPADU
+          </div>
+
+          <h2 className="text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-4xl lg:text-5xl">
+            Fitur Unggulan untuk
+            <span className="block bg-gradient-to-r from-blue-600 to-sky-500 bg-clip-text text-transparent">
+              Pengaduan Publik Digital
+            </span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-pretty">
-            SIPADU hadir dengan berbagai fitur yang memudahkan masyarakat dalam menyampaikan pengaduan pelayanan publik.
+
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-slate-500 dark:text-slate-400 sm:text-lg">
+            SIPADU membantu masyarakat membuat laporan, melampirkan bukti,
+            memantau status, dan menerima tindak lanjut dari admin dalam satu
+            platform yang rapi dan mudah digunakan.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => (
-            <Card key={index} className="border bg-card hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 mb-4">
-                  <feature.icon className="h-6 w-6 text-primary" />
+        {/* Main Feature Layout */}
+        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1.1fr_1.9fr]">
+          {/* Highlight Card */}
+          <div className="relative overflow-hidden rounded-[32px] border border-blue-100 bg-gradient-to-br from-blue-600 via-blue-600 to-sky-500 p-7 text-white shadow-xl shadow-blue-600/20 dark:border-blue-900/60">
+            <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10" />
+            <div className="absolute -bottom-24 right-12 h-72 w-72 rounded-full bg-white/10" />
+
+            <div className="relative z-10">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 backdrop-blur">
+                <Shield className="h-7 w-7" />
+              </div>
+
+              <h3 className="mt-8 text-3xl font-bold tracking-tight">
+                Sistem pengaduan yang lebih transparan.
+              </h3>
+
+              <p className="mt-4 text-sm leading-7 text-blue-50">
+                Setiap laporan memiliki alur yang jelas: dibuat oleh user,
+                masuk ke dashboard admin, diperbarui statusnya, lalu dapat
+                dipantau kembali oleh pelapor.
+              </p>
+
+              <div className="mt-8 space-y-3">
+                <div className="flex items-center gap-3 rounded-2xl bg-white/10 p-4 backdrop-blur">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-blue-600">
+                    01
+                  </div>
+                  <div>
+                    <p className="font-bold">User membuat laporan</p>
+                    <p className="text-sm text-blue-50">
+                      Lengkap dengan kategori, lokasi, dan foto bukti.
+                    </p>
+                  </div>
                 </div>
-                <CardTitle className="text-lg">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-muted-foreground">
-                  {feature.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+
+                <div className="flex items-center gap-3 rounded-2xl bg-white/10 p-4 backdrop-blur">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-blue-600">
+                    02
+                  </div>
+                  <div>
+                    <p className="font-bold">Admin menindaklanjuti</p>
+                    <p className="text-sm text-blue-50">
+                      Status dan catatan admin langsung tersimpan.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 rounded-2xl bg-white/10 p-4 backdrop-blur">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-blue-600">
+                    03
+                  </div>
+                  <div>
+                    <p className="font-bold">User memantau progres</p>
+                    <p className="text-sm text-blue-50">
+                      Perubahan status tampil di halaman Laporan Saya.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Feature Cards */}
+          <div className="grid gap-5 sm:grid-cols-2">
+            {features.map((feature, index) => {
+              const Icon = feature.icon;
+
+              return (
+                <div
+                  key={index}
+                  className="group rounded-[28px] border border-slate-200 bg-white p-6 shadow-sm shadow-slate-200/70 transition-all duration-300 hover:-translate-y-1 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-100/60 dark:border-slate-800 dark:bg-slate-900 dark:shadow-none dark:hover:border-blue-900/70 dark:hover:shadow-none"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex h-13 w-13 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition group-hover:bg-blue-600 group-hover:text-white dark:bg-blue-950/40 dark:text-blue-300 dark:group-hover:bg-blue-600 dark:group-hover:text-white">
+                      <Icon className="h-6 w-6" />
+                    </div>
+
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-50 text-slate-400 transition group-hover:bg-blue-50 group-hover:text-blue-600 dark:bg-slate-800 dark:text-slate-500 dark:group-hover:bg-blue-950/50 dark:group-hover:text-blue-300">
+                      <ArrowRight className="h-4 w-4" />
+                    </div>
+                  </div>
+
+                  <div className="mt-6">
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-slate-400">
+                      Fitur {String(index + 1).padStart(2, '0')}
+                    </p>
+
+                    <h3 className="text-xl font-bold tracking-tight text-slate-950 dark:text-white">
+                      {feature.title}
+                    </h3>
+
+                    <p className="mt-3 text-sm leading-7 text-slate-500 dark:text-slate-400">
+                      {feature.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Bottom Stats */}
+        <div className="mx-auto mt-8 grid max-w-7xl gap-4 sm:grid-cols-3">
+          <div className="rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm shadow-slate-200/70 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 dark:shadow-none">
+            <p className="text-3xl font-bold text-blue-600 dark:text-blue-300">
+              24/7
+            </p>
+            <p className="mt-2 text-sm font-medium text-slate-500 dark:text-slate-400">
+              Sistem dapat menerima laporan kapan saja.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm shadow-slate-200/70 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 dark:shadow-none">
+            <p className="text-3xl font-bold text-blue-600 dark:text-blue-300">
+              Real-time
+            </p>
+            <p className="mt-2 text-sm font-medium text-slate-500 dark:text-slate-400">
+              Status laporan bisa dipantau langsung oleh user.
+            </p>
+          </div>
+
+          <div className="rounded-3xl border border-slate-200 bg-white/80 p-6 shadow-sm shadow-slate-200/70 backdrop-blur dark:border-slate-800 dark:bg-slate-900/80 dark:shadow-none">
+            <p className="text-3xl font-bold text-blue-600 dark:text-blue-300">
+              Admin
+            </p>
+            <p className="mt-2 text-sm font-medium text-slate-500 dark:text-slate-400">
+              Setiap laporan dapat diberi status dan catatan tindak lanjut.
+            </p>
+          </div>
         </div>
       </div>
     </section>
